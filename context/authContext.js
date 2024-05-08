@@ -13,7 +13,7 @@ const AuthProvider = ({ children }) => {
     try {
       const { data } = await authApi.login(dto);
       const userType = data.userType;
-      window.localStorage.setItem('userType', userType);
+      localStorage.setItem('userType', userType);
       setUserType(userType);
       return data;
     } catch (error) {
@@ -23,7 +23,7 @@ const AuthProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    const userTypeFromLocalStorage = window.localStorage.getItem('userType');
+    const userTypeFromLocalStorage = localStorage.getItem('userType');
     if (userTypeFromLocalStorage) {
       setUserType(userTypeFromLocalStorage);
     }

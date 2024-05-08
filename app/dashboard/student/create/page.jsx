@@ -27,7 +27,7 @@ const page = () => {
         console.log(response)
 
         if(response){
-            window.localStorage.setItem("studentId", response.data.result._id)
+            localStorage.setItem("studentId", response.data.result._id)
             toast.success("Student Created Successfully")
             router.push("/dashboard/student")
         }

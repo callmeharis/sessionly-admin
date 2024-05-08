@@ -27,7 +27,7 @@ const page = () => {
         console.log(response)
 
         if(response){
-            window.localStorage.setItem("expertId", response.data.result._id)
+            localStorage.setItem("expertId", response.data.result._id)
             toast.success("Expert Created Successfully")
             router.push("/dashboard/experts")
         }

@@ -47,7 +47,7 @@ const Sidebar = () => {
                 items = [
                     { name: "Dashboard", href: "/dashboard", icon: AiOutlineHome },
                     { name: "Category", href: "/dashboard/category", icon: BsPeople },
-                    { name: "Student", href: "/dashboard/student", icon: FiMail },s
+                    { name: "Student", href: "/dashboard/student", icon: FiMail },
                     // Add other student sidebar items here
                 ];
             }

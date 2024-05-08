@@ -48,7 +48,7 @@ const SignupForm = () => {
 
             console.log(response);
             if (response) {
-                window.localStorage.setItem("userType", response.data.userType)
+                localStorage.setItem("userType", response.data.userType)
                 router.push("/dashboard");
 
                 toast.success("Staff Login Successfully");
@@ -70,7 +70,7 @@ const SignupForm = () => {
 
             console.log(response);
             if (response) {
-                window.localStorage.setItem("userType", response.data.result.userType)
+                localStorage.setItem("userType", response.data.result.userType)
                 router.push("/dashboard");
                 toast.success("Staff Created Successfully");
                 setSignUpData({

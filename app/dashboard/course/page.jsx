@@ -56,13 +56,14 @@ const page = () => {
                     create course
                 </button>
             </div>
-            <table className="w-full  text-sm">
-                <thead>
+            <table className="w-full text-sm">
+                <thead className="bg-[#10b981]">
                     <tr className="text-lg bg-[#10b981] text-white text-left">
                         <th>S.No</th>
                         {/* <th>Category Image</th> */}
                         <th>Course Name</th>
                         <th>Outline</th>
+                        <th>Actions</th>
                         
                     </tr>
                 </thead>
@@ -70,7 +71,7 @@ const page = () => {
                 <tbody>
                     {courses.map((task, index) => (
                         <tr className="bg-slate-50 border-b border-gray-300" key={index}>
-                            <td className="text-center">{index + 1}</td>
+                            <td className="pl-4">{index + 1}</td>
                             {/* <td>
                 <img
                                     src={admin.categoryImage}
@@ -80,9 +81,9 @@ const page = () => {
               </td> */}
                             <td>{task.title}</td>
                             <td>{task.description}</td>
-                            <td>{task.complated}</td>
-                            <td>{task.dueDate}</td>
-                            <td>{task.assignedTo}</td>
+                            {/* <td>{task.complated}</td> */}
+                            {/* <td>{task.dueDate}</td> */}
+                            {/* <td>{task.assignedTo}</td> */}
                             {/* <td>{task.assignedToElse}</td> */}
                             {/* <td>{task.assignedBy}</td> */}
                             {/* <td>{task.imestamps}</td> */}

@@ -34,7 +34,7 @@ const Page = () => {
     }
 
     console.log(formData);
-    const adminId = window.localStorage.getItem("adminId")
+    const adminId = localStorage.getItem("adminId")
 
     console.log(adminId);
 
