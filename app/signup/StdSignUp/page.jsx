@@ -269,7 +269,7 @@ const SignupForm = () => {
 
             console.log(response);
             if (response) {
-                localStorage.setItem("userType", response.data.userType)
+                window.localStorage.setItem("userType", response.data.userType)
                 router.push("/dashboard");
 
                 toast.success("Staff Login Successfully");
@@ -292,7 +292,7 @@ const SignupForm = () => {
 
             console.log(response);
             if (response) {
-                localStorage.setItem("userType", response.data.result.userType)
+                window.localStorage.setItem("userType", response.data.result.userType)
                 router.push("/dashboard");
                 toast.success("Student Created Successfully");
                 setSignUpData({

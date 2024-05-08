@@ -20,7 +20,7 @@ const page = () => {
 
     // creating Staff Member
 
-    const expertId = localStorage.getItem("expertId")
+    const expertId = window.localStorage.getItem("expertId")
     const updateStaff = async (e) => {
         e.preventDefault()
         try {

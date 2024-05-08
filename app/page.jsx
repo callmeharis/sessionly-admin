@@ -94,8 +94,8 @@ const page = () => {
           password: "",
           phone: ""
         });
-        localStorage.setItem("userType", response.data.result.userType)
-        localStorage.setItem("adminId", response.data.result._id)
+        window.localStorage.setItem("userType", response.data.result.userType)
+        window.localStorage.setItem("adminId", response.data.result._id)
         router.push("/dashboard")
       }
     } catch (error) {
@@ -112,8 +112,8 @@ const page = () => {
       const response = await axios.post("https://api.dev.sessionly.co/api/v2/login", login)
       console.log(response);
       if(response){
-        localStorage.setItem("adminToken", response.data.token)
-        localStorage.setItem("userType", response.data.userType)
+        window.localStorage.setItem("adminToken", response.data.token)
+        window.localStorage.setItem("userType", response.data.userType)
         toast.success(`${response.data.userType} Login Successfully`)
         // Resetting login state to empty strings
         setLogin({ 

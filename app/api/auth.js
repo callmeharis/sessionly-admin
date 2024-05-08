@@ -6,7 +6,7 @@ export class AuthApi {
             const { data } = await axios.post(`https://api.dev.sessionly.co/api/v2/login`, dto);
             console.log("auth data", data);
             const userType = data.userType;
-            localStorage.setItem('userType', userType); // Store userType in local storage
+            window.localStorage.setItem('userType', userType); // Store userType in local storage
             return data;
         } catch (error) {
             console.error("Error during login:", error);
@@ -17,7 +17,7 @@ export class AuthApi {
     async getUserType() {
         try {
             // Try to retrieve userType from local storage
-            const userType = localStorage.getItem('userType');
+            const userType = window.localStorage.getItem('userType');
             console.log("aRE WE GETTING USERtYPE ",userType)
             if (userType) {
                 return userType;
