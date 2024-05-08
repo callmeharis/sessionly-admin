@@ -1,7 +1,7 @@
 "use client";
 import CourseApi from "@/app/api/sessions";
 import BaseInputControl from "@/components/forms/BaseInputControl";
-import { CourseEntity } from "@/models/sessions.entity";
+import { SessionsEntity } from "@/models/sessions.entity";
 import { useEffectAsync } from "@/utils/react";
 import { useFormik } from "formik";
 import { useParams, useRouter } from "next/navigation";
@@ -13,8 +13,8 @@ export default function page() {
   const courseApi = new CourseApi();
   const router = useRouter();
   const form = useFormik({
-    initialValues: new CourseEntity(),
-    validationSchema: CourseEntity.yupSchema(),
+    initialValues: new SessionsEntity(),
+    validationSchema: SessionsEntity.yupSchema(),
     onSubmit: async (values) => {
       try {
         const { ...restValues } = values;
