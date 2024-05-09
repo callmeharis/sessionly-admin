@@ -34,36 +34,37 @@ const Page = () => {
     }
 
     console.log(formData);
-    const adminId = localStorage.getItem("adminId")
 
-    console.log(adminId);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(formData);
-
-        setFormData({
-            title: '',
-            description: '',
-            price: '',
-            requirements: '',
-            preRequirements: '',
-            admin: '',
-            staff: '',
-            students: '',
-            duration: '',
-            startDate: '',
-            endDate: '',
-            isActive: '',
-            lastDateOfEnrollment: '',
-            image: '',
-            calendar: ''
-        });
         try {
-            const res = await axios.post(`https://api.dev.sessionly.co/api/v2/course/register/${adminId}`, formData)
-            if(res) {
-                toast.success("Course Created Succesfully")
-                router.push("/dashboard/course")
+            if (typeof window !== "undefined") {
+                const adminId = localStorage.getItem("adminId")
+                console.log(formData);
+
+                setFormData({
+                    title: '',
+                    description: '',
+                    price: '',
+                    requirements: '',
+                    preRequirements: '',
+                    admin: '',
+                    staff: '',
+                    students: '',
+                    duration: '',
+                    startDate: '',
+                    endDate: '',
+                    isActive: '',
+                    lastDateOfEnrollment: '',
+                    image: '',
+                    calendar: ''
+                });
+                const res = await axios.post(`https://api.dev.sessionly.co/api/v2/course/register/${adminId}`, formData)
+                if (res) {
+                    toast.success("Course Created Succesfully")
+                    router.push("/dashboard/course")
+                }
             }
         } catch (err) {
             console.log(err)
